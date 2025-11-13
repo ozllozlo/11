@@ -3,22 +3,15 @@
 
 int main(void)
 {
-     int i;
-     int grade[5];
-     int sum=0;
+     int i=100;
+     int *p=&i;
+     int **q=&p;
      
-     for(i=0; i<5; i++)
-     {
-              printf("grade[%i]=", i);
-              scanf("%d", &grade[i]);
-     }
-              
-     for(i=0; i<5; i++)
-     {
-              printf("grade[%i]=%i\n", i, *(grade+i));
-              sum = sum + *(grade+i);
-     }
-   printf("Average: %i\n", sum/5);
+    *p=200;
+    printf("i=%d, *p=%d, **q=%d\n", i, *p,**q);
+    
+    **q=300;
+    printf("i=%d, *p=%d, **q=%d\n", i, *p,**q);
    
   system("PAUSE");	
   return 0;
